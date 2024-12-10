@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class FooterPage {
+public class FooterMenu {
     WebDriver driver;
     Duration duration = Duration.ofSeconds(10);
     BaseUtil baseUtil;
 
     // contructor
-    public FooterPage(WebDriver driver) {
+    public FooterMenu(WebDriver driver) {
         this.driver = driver;
     }
 

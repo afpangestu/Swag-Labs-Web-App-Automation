@@ -7,12 +7,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class NavBarPage {
+public class NavBarMenu {
     WebDriver driver;
     Duration duration = Duration.ofSeconds(10);
 
     // contructor
-    public NavBarPage(WebDriver driver) {
+    public NavBarMenu(WebDriver driver) {
         this.driver = driver;
     }
 

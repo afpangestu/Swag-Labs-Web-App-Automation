@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import page.FooterPage;
+import page.FooterMenu;
 import page.LoginPage;
 
 import java.util.ArrayList;
@@ -31,9 +31,9 @@ public class FooterTest {
 
     @Test
     public void twitterTest()  {
-        FooterPage footerPage = new FooterPage(driver);
+        FooterMenu footerMenu = new FooterMenu(driver);
         // click twitter button
-        footerPage.clickTwitterBtn();
+        footerMenu.clickTwitterBtn();
         // initialization arraylist
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         // move to tab 2
@@ -54,9 +54,9 @@ public class FooterTest {
 
     @Test
     public void facebookTest()  {
-        FooterPage footerPage = new FooterPage(driver);
+        FooterMenu footerMenu = new FooterMenu(driver);
         // click twitter button
-        footerPage.clickFacebookBtn();
+        footerMenu.clickFacebookBtn();
         // initialization arraylist
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         // move to tab 2
@@ -77,9 +77,9 @@ public class FooterTest {
 
     @Test
     public void linkedInTest()  {
-        FooterPage footerPage = new FooterPage(driver);
+        FooterMenu footerMenu = new FooterMenu(driver);
         // click twitter button
-        footerPage.clickLinkedInBtn();
+        footerMenu.clickLinkedInBtn();
         // initialization arraylist
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         // move to tab 2

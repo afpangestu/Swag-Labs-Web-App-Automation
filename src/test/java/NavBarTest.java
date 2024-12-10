@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import page.LoginPage;
-import page.NavBarPage;
+import page.NavBarMenu;
 
 import java.time.Duration;
 
@@ -35,18 +35,18 @@ public class NavBarTest {
 
     @Test(priority = 1)
     public void navAllItemsTest() {
-        NavBarPage navBarPage = new NavBarPage(driver);
+        NavBarMenu navBarMenu = new NavBarMenu(driver);
         // click nav menu
-        navBarPage.clickNavMenuBtn();
+        navBarMenu.clickNavMenuBtn();
         // click all items button
-        navBarPage.clickAllItemsBtn();
+        navBarMenu.clickAllItemsBtn();
     }
 
     @Test(priority = 2)
     public void navAboutTest() {
-        NavBarPage navBarPage = new NavBarPage(driver);
+        NavBarMenu navBarMenu = new NavBarMenu(driver);
         // click about
-        navBarPage.clickAboutBtn();
+        navBarMenu.clickAboutBtn();
         // assert url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getAboutUrl());
         driver.navigate().back();
@@ -54,7 +54,7 @@ public class NavBarTest {
 
     @Test(priority = 3)
     public void navResetStateTest() {
-        NavBarPage navBarPage = new NavBarPage(driver);
+        NavBarMenu navBarMenu = new NavBarMenu(driver);
         // locator "Add to cart" button
         By addToCartBtn = By.xpath("//*[contains(text(),'Add to cart')]");
         // locator "Remove" button
@@ -70,17 +70,17 @@ public class NavBarTest {
         System.out.println("jumlah cart saat ini : " + totalCart);
         if (totalCart > 0) {
             // click nav menu
-            navBarPage.clickNavMenuBtn();
+            navBarMenu.clickNavMenuBtn();
             // click reset state button
-            navBarPage.clickResetStateBtn();
+            navBarMenu.clickResetStateBtn();
         }
     }
 
     @Test(priority = 4)
     public void logoutTest() {
-        NavBarPage navBarPage = new NavBarPage(driver);
+        NavBarMenu navBarMenu = new NavBarMenu(driver);
         // click logout button
-        navBarPage.clickLogoutBtn();
+        navBarMenu.clickLogoutBtn();
     }
 
     @AfterClass
