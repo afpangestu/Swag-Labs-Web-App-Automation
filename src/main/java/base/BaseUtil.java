@@ -12,4 +12,16 @@ public class BaseUtil {
     public String getAboutUrl() {
         return "https://saucelabs.com/";
     }
+
+    public String getFacebookUrl() {
+        return "https://www.facebook.com/saucelabs";
+    }
+
+    public String getLinkedInUrl() {
+        return "https://www.linkedin.com/company/sauce-labs/";
+    }
+
+    public String getTwitterUrl() {
+        return "https://x.com/saucelabs";
+    }
 }
