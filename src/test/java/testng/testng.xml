@@ -6,6 +6,7 @@
         <classes>
             <class name="LoginTest"/>
             <class name="NavBarTest"/>
+            <class name="FooterTest"/>
         </classes>
     </test>
 </suite>
