@@ -20,10 +20,8 @@ public class LoginPage {
     By usernameTxt =  By.xpath("//input[@id='user-name']");
     By passwordTxt = By.xpath("//input[@id='password']");
     By loginBtn = By.xpath("//input[@id='login-button']");
-    By errorMsgIncorrect = By.xpath("//h3[normalize-space()='Epic sadface: Username and password do not match any user in this service']");
-    By errorMsgBlank = By.xpath("//h3[normalize-space()='Epic sadface: Username is required']");
-    By navMenuBtn = By.xpath("//button[@id='react-burger-menu-btn']");
-    By logoutBtn = By.xpath("//a[@id='logout_sidebar_link']");
+    By errorMsgIncorrect = By.xpath("//*[contains(text(),'Username and password do not match')]");
+    By errorMsgBlank = By.xpath("//*[contains(text(),'Epic sadface: Username is required')]");
 
     // actions
     public void setUsername(String username) {
@@ -52,14 +50,5 @@ public class LoginPage {
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(errorMsgBlank)
         );
-    }
-
-    public void logout() {
-        driver.findElement(navMenuBtn).click();
-        WebDriverWait wait = new WebDriverWait(driver, duration);
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(logoutBtn)
-        );
-        driver.findElement(logoutBtn).click();
     }
 }
