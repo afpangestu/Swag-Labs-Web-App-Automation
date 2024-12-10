@@ -1,6 +1,5 @@
 package page;
 
-import base.BaseUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +10,6 @@ import java.time.Duration;
 public class FooterMenu {
     WebDriver driver;
     Duration duration = Duration.ofSeconds(10);
-    BaseUtil baseUtil;
 
     // contructor
     public FooterMenu(WebDriver driver) {
