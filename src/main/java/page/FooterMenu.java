@@ -20,6 +20,8 @@ public class FooterMenu {
     By twitterBtn = By.xpath("//a[normalize-space()='Twitter']");
     By facebookBtn = By.xpath("//a[normalize-space()='Facebook']");
     By linkedInBtn = By.xpath("//a[normalize-space()='LinkedIn']");
+    By tosLinkText = By.xpath("//*[contains(text(),'Terms of Service')]");
+    By privayLinkText = By.xpath("//*[contains(text(),'Privacy Policy')]");
 
     // actions
     public void clickTwitterBtn() {
@@ -36,5 +38,13 @@ public class FooterMenu {
 
     public void clickLinkedInBtn() {
         driver.findElement(linkedInBtn).click();
+    }
+
+    public void clickTosLinkText() {
+        driver.findElement(tosLinkText);
+    }
+
+    public void clickPrivayLinkText() {
+        driver.findElement(privayLinkText);
     }
 }

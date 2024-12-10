@@ -54,6 +54,9 @@ public class FooterTest {
 
     @Test
     public void facebookTest()  {
+        for (int i=0; i<3; i++) {
+            System.out.println("ini data ke-"+i);
+        }
         FooterMenu footerMenu = new FooterMenu(driver);
         // click twitter button
         footerMenu.clickFacebookBtn();
@@ -96,6 +99,16 @@ public class FooterTest {
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
         System.out.println("Link Actual: " + driver.getCurrentUrl() +" Link Expected: " +baseUtil.getHomePageUrl());
+    }
+
+    @Test
+    public void privacyPolicyTest() {
+        
+    }
+
+    @Test
+    public void termsOfServiceTest() {
+
     }
 
     @AfterClass
