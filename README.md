@@ -1,4 +1,4 @@
-# Test-Automation-for-Swag-Labs 
+# Swag-Labs-Web-App-Automation
 ### 🛠 Automated testing for Swag Labs web with test cases and bug reports
 
 📢 This repository contains an automated testing project for Swag Labs using Java, Selenium, Maven, ChromeDriver, TestNG, and IntelliJ IDE. The tests are designed to cover various scenarios on the Sauce Demo website (https://www.saucedemo.com).
