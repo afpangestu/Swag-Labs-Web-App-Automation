@@ -22,7 +22,7 @@ Test automation is the process of using software tools and frameworks to automat
 
 The project covers the following areas of the Swag Labs website:
 
-- Login page for all accepted users and error scenarios.
+- Login page
 - Navigation Bar
 - Footer Bar
 - Product page, including product list and product detail. (ongoing)
