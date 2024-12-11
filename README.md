@@ -52,7 +52,7 @@ This test automation project for Swag Labs utilizes a variety of tools and techn
 
 - **IntelliJ IDE**:  An integrated development environment (IDE) written in Java for developing computer software written in Java, Kotlin, Groovy, and other JVM-based languages.
 
-- **Qase**:  Qase is a modern test management platform for manual & automated QA testing & reporting that helps your team deliver a higher quality product, faster.
+- **Qase**:  A modern test management platform for manual & automated QA testing & reporting that helps your team deliver a higher quality product, faster.
 
 These technologies are combined to create an effective testing framework that automates test cases, performs comparisons between expected and actual outcomes, and generates detailed test reports.
 
