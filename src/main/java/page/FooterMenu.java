@@ -20,8 +20,15 @@ public class FooterMenu {
     By twitterBtn = By.xpath("//a[normalize-space()='Twitter']");
     By facebookBtn = By.xpath("//a[normalize-space()='Facebook']");
     By linkedInBtn = By.xpath("//a[normalize-space()='LinkedIn']");
-    By tosLinkText = By.xpath("//*[contains(text(),'Terms of Service')]");
-    By privayLinkText = By.xpath("//*[contains(text(),'Privacy Policy')]");
+    By footerText = By.xpath("//div[@class='footer_copy']");
+
+    // linktext itu case sensitif, tapi harus 100% matches with the actual link text
+//    By tosLinkText = By.linkText("Sauce Labs Backpack");
+    // partiallinktext itu case sensitif, tapi selama mengandung kata actualnya dia akan tetap jalan
+//    By tosLinkText = By.partialLinkText("Backpack");
+
+    By tosLinkText = By.partialLinkText("Terms of Service");
+    By privacyLinkText = By.partialLinkText("Privacy Policy");
 
     // actions
     public void clickTwitterBtn() {
@@ -33,18 +40,42 @@ public class FooterMenu {
     }
 
     public void clickFacebookBtn() {
+        WebDriverWait wait = new WebDriverWait(driver, duration);
+        wait.until(
+                ExpectedConditions.elementToBeClickable(facebookBtn)
+        );
         driver.findElement(facebookBtn).click();
     }
 
     public void clickLinkedInBtn() {
+        WebDriverWait wait = new WebDriverWait(driver, duration);
+        wait.until(
+                ExpectedConditions.elementToBeClickable(linkedInBtn)
+        );
         driver.findElement(linkedInBtn).click();
     }
 
-    public void clickTosLinkText() {
-        driver.findElement(tosLinkText);
+    public String getFooterText() {
+        WebDriverWait wait = new WebDriverWait(driver, duration);
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(footerText)
+        );
+        return driver.findElement(footerText).getText();
     }
 
-    public void clickPrivayLinkText() {
-        driver.findElement(privayLinkText);
+    public void checkTosLinkText() {
+        WebDriverWait wait = new WebDriverWait(driver,duration);
+        wait.until(
+                ExpectedConditions.elementToBeClickable(tosLinkText)
+        );
+        driver.findElement(tosLinkText).click();
+    }
+
+    public void checkPrivacyLinkText() {
+        WebDriverWait wait = new WebDriverWait(driver,duration);
+        wait.until(
+                ExpectedConditions.elementToBeClickable(privacyLinkText)
+        );
+        driver.findElement(privacyLinkText).click();
     }
 }

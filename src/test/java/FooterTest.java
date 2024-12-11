@@ -29,7 +29,7 @@ public class FooterTest {
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
     }
 
-    @Test
+    @Test(priority = 1)
     public void twitterTest()  {
         FooterMenu footerMenu = new FooterMenu(driver);
         // click twitter button
@@ -52,7 +52,7 @@ public class FooterTest {
         System.out.println("Link Actual: " + driver.getCurrentUrl() +" Link Expected: " +baseUtil.getHomePageUrl());
     }
 
-    @Test
+    @Test(priority = 2)
     public void facebookTest()  {
         for (int i=0; i<3; i++) {
             System.out.println("ini data ke-"+i);
@@ -78,7 +78,7 @@ public class FooterTest {
         System.out.println("Link Actual: " + driver.getCurrentUrl() +" Link Expected: " +baseUtil.getHomePageUrl());
     }
 
-    @Test
+    @Test(priority = 3)
     public void linkedInTest()  {
         FooterMenu footerMenu = new FooterMenu(driver);
         // click twitter button
@@ -91,7 +91,7 @@ public class FooterTest {
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getLinkedInUrl());
         // print output to terminal
         System.out.println("Link Actual: " + driver.getCurrentUrl() +" Link Expected: " +baseUtil.getLinkedInUrl());
-        // close current tab (linkedin)
+        // close current tab (LinkedIn)
         driver.close();
         // move to first tab (Swag labs)
         driver.switchTo().window(tabs.getFirst());
@@ -101,14 +101,22 @@ public class FooterTest {
         System.out.println("Link Actual: " + driver.getCurrentUrl() +" Link Expected: " +baseUtil.getHomePageUrl());
     }
 
-    @Test
-    public void privacyPolicyTest() {
-        
+    @Test(priority = 4)
+    public void checkFooterTextTest() {
+        FooterMenu footerMenu = new FooterMenu(driver);
+        Assert.assertEquals(footerMenu.getFooterText(),"© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy");
     }
 
-    @Test
-    public void termsOfServiceTest() {
+    @Test(priority = 5)
+    public void checkTosLinkTest() {
+        FooterMenu footerMenu = new FooterMenu(driver);
+        footerMenu.checkTosLinkText();
+    }
 
+    @Test(priority = 6)
+    public void checkPrivacyLinkTest() {
+        FooterMenu footerMenu = new FooterMenu(driver);
+        footerMenu.checkPrivacyLinkText();
     }
 
     @AfterClass
