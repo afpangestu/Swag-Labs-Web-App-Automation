@@ -76,7 +76,7 @@ Ensure that you have the following tools and technologies installed on your mach
 
 1. Open the project in IntelliJ or your preferred IDE.
 2. Navigate to the `src/test/java/testng` directory.
-3. Locate the test files `textng.xml`.
+3. Locate the test files `testng.xml`.
 4. Run the test by `Right click > Run` to execute the automated test scenarios.
 
 ## Contributing
