@@ -25,8 +25,8 @@ The project covers the following areas of the Swag Labs website:
 - Login page for all accepted users and error scenarios.
 - Navigation Bar
 - Footer Bar
-- Product page, including product list and product detail.
-- Checkout product
+- Product page, including product list and product detail. (ongoing)
+- Checkout product (ongoing)
 
 ## Features
 
@@ -51,6 +51,8 @@ This test automation project for Swag Labs utilizes a variety of tools and techn
 - **Maven**: A build and dependency management tool that simplifies project setup and maintenance.
 
 - **IntelliJ IDE**:  An integrated development environment (IDE) written in Java for developing computer software written in Java, Kotlin, Groovy, and other JVM-based languages.
+
+- **Qase**:  Qase is a modern test management platform for manual & automated QA testing & reporting that helps your team deliver a higher quality product, faster.
 
 These technologies are combined to create an effective testing framework that automates test cases, performs comparisons between expected and actual outcomes, and generates detailed test reports.
 
