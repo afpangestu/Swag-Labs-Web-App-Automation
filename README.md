@@ -68,7 +68,7 @@ Ensure that you have the following tools and technologies installed on your mach
 - [Java](https://www.java.com/en/download/)
 - [Maven](https://maven.apache.org/install.html)
 - [IntelliJ IDE](https://www.jetbrains.com/idea/download/)
-- [Selenium](https://www.selenium.dev/downloads/) Need to add Selenuim jar files to class path!
+- [Selenium](https://www.selenium.dev/downloads/)
 - [Chrome driver](https://chromedriver.chromium.org)
   <br><br>Note: Make sure to download the relavent Chrome driver version for your chrome browser match, and put it into project directory.
 
