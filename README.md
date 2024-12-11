@@ -25,7 +25,7 @@ The project covers the following areas of the Swag Labs website:
 - Login page
 - Navigation Bar
 - Footer Bar
-- Product page, including product list and product detail. (ongoing)
+- Home page, including product list and product detail. (ongoing)
 - Checkout product (ongoing)
 
 ## Features
