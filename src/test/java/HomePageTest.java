@@ -46,6 +46,18 @@ public class HomePageTest {
         System.out.println("Cart and ContinueShopping button is working fine");
     }
 
+    @Test
+    public void allProductTest() {
+        HomePage homePage = new HomePage(driver);
+        // assert each product element
+        Assert.assertTrue(homePage.getAllProduct());
+        System.out.println("Get All Product success");
+    }
+
+    public void productDetailTest() {
+
+    }
+
     @AfterClass
     public void quit() {
         if (driver != null) {

@@ -40,16 +40,19 @@ public class HomePage {
 
     // actions
     public boolean checkLogoSwag() {
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(logoSwag)
-        );
-        return driver.findElement(logoSwag).isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(logoSwag)).isDisplayed();
     }
 
     public void clickCartBtn() {
-        wait.until(
-                ExpectedConditions.elementToBeClickable(cartBtn)
-        );
-        driver.findElement(cartBtn).click();
+        wait.until(ExpectedConditions.elementToBeClickable(cartBtn)).click();
+    }
+
+    public boolean getAllProduct() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allImgProduct));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allTitleProduct));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allDescProduct));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allPriceProduct));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allAddToCartBtnProduct));
+        return true;
     }
 }

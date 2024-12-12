@@ -29,4 +29,8 @@ public class BaseUtil {
     public String getCartUrl() {
         return "https://www.saucedemo.com/cart.html";
     }
+
+    public String getProductDetailsUrl() {
+        return "https://www.saucedemo.com/inventory-item.html?id=(*))";
+    }
 }
