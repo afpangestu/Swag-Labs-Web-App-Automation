@@ -41,14 +41,10 @@ public class LoginPage {
     }
 
     public void setErrorMsgIncorrect() {
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(errorMsgIncorrect)
-        );
+        wait.until(ExpectedConditions.visibilityOfElementLocated(errorMsgIncorrect));
     }
 
     public void setErrorMsgBlank() {
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(errorMsgBlank)
-        );
+        wait.until(ExpectedConditions.visibilityOfElementLocated(errorMsgBlank));
     }
 }
