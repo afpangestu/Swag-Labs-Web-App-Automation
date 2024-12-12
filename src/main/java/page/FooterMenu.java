@@ -9,11 +9,13 @@ import java.time.Duration;
 
 public class FooterMenu {
     WebDriver driver;
-    Duration duration = Duration.ofSeconds(10);
+    WebDriverWait wait;
 
     // contructor
     public FooterMenu(WebDriver driver) {
         this.driver = driver;
+        // explicit wait
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     // locator
@@ -32,7 +34,6 @@ public class FooterMenu {
 
     // actions
     public void clickTwitterBtn() {
-        WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
                 ExpectedConditions.elementToBeClickable(twitterBtn)
         );
@@ -40,7 +41,6 @@ public class FooterMenu {
     }
 
     public void clickFacebookBtn() {
-        WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
                 ExpectedConditions.elementToBeClickable(facebookBtn)
         );
@@ -48,7 +48,6 @@ public class FooterMenu {
     }
 
     public void clickLinkedInBtn() {
-        WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
                 ExpectedConditions.elementToBeClickable(linkedInBtn)
         );
@@ -56,7 +55,6 @@ public class FooterMenu {
     }
 
     public String getFooterText() {
-        WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(footerText)
         );
@@ -64,7 +62,6 @@ public class FooterMenu {
     }
 
     public void checkTosLinkText() {
-        WebDriverWait wait = new WebDriverWait(driver,duration);
         wait.until(
                 ExpectedConditions.elementToBeClickable(tosLinkText)
         );
@@ -72,7 +69,6 @@ public class FooterMenu {
     }
 
     public void checkPrivacyLinkText() {
-        WebDriverWait wait = new WebDriverWait(driver,duration);
         wait.until(
                 ExpectedConditions.elementToBeClickable(privacyLinkText)
         );

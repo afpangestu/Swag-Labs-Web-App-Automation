@@ -9,11 +9,13 @@ import java.time.Duration;
 
 public class LoginPage {
     WebDriver driver;
-    Duration duration = Duration.ofSeconds(10);
+    WebDriverWait wait;
 
     // contructor
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        // explicit wait
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     // locator
@@ -39,14 +41,12 @@ public class LoginPage {
     }
 
     public void setErrorMsgIncorrect() {
-        WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(errorMsgIncorrect)
         );
     }
 
     public void setErrorMsgBlank() {
-        WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(errorMsgBlank)
         );

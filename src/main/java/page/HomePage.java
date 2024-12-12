@@ -2,13 +2,20 @@ package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomePage {
     WebDriver driver;
+    WebDriverWait wait;
 
     // contructor
     public HomePage(WebDriver driver) {
         this.driver = driver;
+        // explicit wait
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     // locator
@@ -32,5 +39,11 @@ public class HomePage {
     By addToCartProduct1 = By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']");
 
     // actions
+    public void checkLogoSwag() {
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(logoSwag)
+        );
+        driver.findElement(logoSwag).isDisplayed();
+    }
 
 }

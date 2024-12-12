@@ -9,11 +9,13 @@ import java.time.Duration;
 
 public class NavBarMenu {
     WebDriver driver;
-    Duration duration = Duration.ofSeconds(10);
+    WebDriverWait wait;
 
     // contructor
     public NavBarMenu(WebDriver driver) {
         this.driver = driver;
+        // explicit wait
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     // locator
@@ -29,7 +31,6 @@ public class NavBarMenu {
     // actions
     public void clickNavMenuBtn() {
         driver.findElement(navMenubtn).click();
-        WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(allItemsBtn)
         );
@@ -45,7 +46,6 @@ public class NavBarMenu {
 
     public void clickLogoutBtn() {
         driver.findElement(logoutBtn).click();
-        WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(logoSwagLabs)
         );
