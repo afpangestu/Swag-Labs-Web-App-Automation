@@ -39,11 +39,11 @@ public class HomePage {
     By addToCartProduct1 = By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']");
 
     // actions
-    public void checkLogoSwag() {
+    public boolean checkLogoSwag() {
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(logoSwag)
         );
-        driver.findElement(logoSwag).isDisplayed();
+        return driver.findElement(logoSwag).isDisplayed();
     }
 
 }

@@ -2,6 +2,7 @@ import base.BaseUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import page.HomePage;
@@ -27,8 +28,16 @@ public class HomePageTest {
     }
 
     @Test
-    public void verifyLogo() {
+    public void verifyLogoTest() {
         HomePage homePage = new HomePage(driver);
-        homePage.checkLogoSwag();
+        Assert.assertTrue(homePage.checkLogoSwag());
+        System.out.println("Logo is visible and available");
+    }
+
+    @AfterClass
+    public void quit() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
