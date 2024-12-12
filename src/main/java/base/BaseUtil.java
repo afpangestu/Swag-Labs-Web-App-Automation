@@ -1,6 +1,7 @@
 package base;
 
 public class BaseUtil {
+    protected String ahahaha = "aowkaokwaok";
     public String getBaseUrl() {
         return "https://www.saucedemo.com/";
     }
@@ -23,5 +24,9 @@ public class BaseUtil {
 
     public String getTwitterUrl() {
         return "https://x.com/saucelabs";
+    }
+
+    public String getCartUrl() {
+        return "https://www.saucedemo.com/cart.html";
     }
 }

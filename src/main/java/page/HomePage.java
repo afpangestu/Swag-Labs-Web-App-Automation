@@ -46,4 +46,10 @@ public class HomePage {
         return driver.findElement(logoSwag).isDisplayed();
     }
 
+    public void clickCartBtn() {
+        wait.until(
+                ExpectedConditions.elementToBeClickable(cartBtn)
+        );
+        driver.findElement(cartBtn).click();
+    }
 }

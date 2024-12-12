@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import page.CartPage;
 import page.HomePage;
 import page.LoginPage;
 
@@ -30,8 +31,19 @@ public class HomePageTest {
     @Test
     public void verifyLogoTest() {
         HomePage homePage = new HomePage(driver);
+        // assert the url
         Assert.assertTrue(homePage.checkLogoSwag());
         System.out.println("Logo is visible and available");
+    }
+
+    @Test
+    public void cartBtnTest() {
+        HomePage homePage = new HomePage(driver);
+        CartPage cartPage = new CartPage(driver);
+        homePage.clickCartBtn();
+        Assert.assertEquals(driver.getCurrentUrl(),baseUtil.getCartUrl());
+        cartPage.clickContinueShoppingBtn();
+        System.out.println("Cart and ContinueShopping button is working fine");
     }
 
     @AfterClass
