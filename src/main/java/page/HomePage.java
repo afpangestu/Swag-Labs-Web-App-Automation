@@ -43,6 +43,10 @@ public class HomePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(logoSwag)).isDisplayed();
     }
 
+    public String getTextLogo() {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(logoSwag)).getText();
+    }
+
     public void clickCartBtn() {
         wait.until(ExpectedConditions.elementToBeClickable(cartBtn)).click();
     }

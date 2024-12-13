@@ -33,7 +33,7 @@ public class HomePageTest {
         HomePage homePage = new HomePage(driver);
         // assert the url
         Assert.assertTrue(homePage.checkLogoSwag());
-        System.out.println("Logo is visible and available");
+        System.out.println("Logo is '"+ homePage.getTextLogo() +"' visible");
     }
 
     @Test

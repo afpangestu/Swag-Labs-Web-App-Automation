@@ -53,7 +53,7 @@ public class NavBarTest {
     }
 
     @Test(priority = 3)
-    public void navResetStateTest() throws InterruptedException {
+    public void navResetStateTest() {
         NavBarMenu navBarMenu = new NavBarMenu(driver);
         // locator "Add to cart" button
         By addToCartBtn = By.xpath("//*[contains(text(),'Add to cart')]");
@@ -71,7 +71,7 @@ public class NavBarTest {
             // click reset state button
             navBarMenu.clickResetStateBtn();
         } else {
-            System.out.println("Eror");
+            System.out.println("Error");
         }
     }
 
