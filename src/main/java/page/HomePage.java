@@ -59,4 +59,24 @@ public class HomePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(allAddToCartBtnProduct));
         return true;
     }
+
+    public String getProductName() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(titleProduct1)).getText();
+    }
+
+    public String getProductImg() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(imgProduct1)).getText();
+    }
+
+    public String getProductDesc() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(descProduct1)).getText();
+    }
+
+    public String getProductPrice() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(priceProduct1)).getText();
+    }
+
+    public void clickAddToCart1() {
+        driver.findElement(addToCartProduct1).click();
+    }
 }
