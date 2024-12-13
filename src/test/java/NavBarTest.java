@@ -53,7 +53,7 @@ public class NavBarTest {
     }
 
     @Test(priority = 3)
-    public void navResetStateTest() {
+    public void navResetStateTest() throws InterruptedException {
         NavBarMenu navBarMenu = new NavBarMenu(driver);
         // locator "Add to cart" button
         By addToCartBtn = By.xpath("//*[contains(text(),'Add to cart')]");
@@ -62,17 +62,16 @@ public class NavBarTest {
 
         driver.findElement(addToCartBtn).click();
         WebDriverWait wait = new WebDriverWait(driver, duration);
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(removeBtn)
-        );
+        wait.until(ExpectedConditions.visibilityOfElementLocated(removeBtn));
 
-        double totalCart = Double.parseDouble(driver.findElement(By.xpath("//span[@class='shopping_cart_badge']")).getText());
-        System.out.println("jumlah cart saat ini : " + totalCart);
-        if (totalCart > 0) {
+        System.out.println("Jumlah cart saat ini : " + navBarMenu.getShoppingCartBadge());
+        if (navBarMenu.getShoppingCartBadge() > 0) {
             // click nav menu
             navBarMenu.clickNavMenuBtn();
             // click reset state button
             navBarMenu.clickResetStateBtn();
+        } else {
+            System.out.println("Eror");
         }
     }
 

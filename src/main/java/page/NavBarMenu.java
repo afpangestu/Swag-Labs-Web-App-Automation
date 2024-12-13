@@ -2,6 +2,7 @@ package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,14 +27,13 @@ public class NavBarMenu {
     By resetBtn = By.xpath("//a[@id='reset_sidebar_link']");
     By logoSwagLabs = By.xpath("//div[@class='login_logo']");
     By cartBadge = By.xpath("//span[@class='shopping_cart_badge']");
+    By cartADUHH = By.xpath("//a[@class='shopping_cart_link']");
 
 
     // actions
     public void clickNavMenuBtn() {
         driver.findElement(navMenubtn).click();
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(allItemsBtn)
-        );
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allItemsBtn));
     }
 
     public void clickAllItemsBtn() {
@@ -46,9 +46,7 @@ public class NavBarMenu {
 
     public void clickLogoutBtn() {
         driver.findElement(logoutBtn).click();
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(logoSwagLabs)
-        );
+        wait.until(ExpectedConditions.visibilityOfElementLocated(logoSwagLabs));
     }
 
     public void clickResetStateBtn() {
