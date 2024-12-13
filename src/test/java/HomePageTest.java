@@ -54,10 +54,6 @@ public class HomePageTest {
         System.out.println("Get All Product success");
     }
 
-    public void productDetailTest() {
-
-    }
-
     @AfterClass
     public void quit() {
         if (driver != null) {
