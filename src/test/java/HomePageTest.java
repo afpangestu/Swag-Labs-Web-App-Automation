@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import page.CartPage;
 import page.HomePage;
 import page.LoginPage;
+import page.ProductDetailsPage;
 
 public class HomePageTest {
     WebDriver driver;
@@ -52,6 +53,19 @@ public class HomePageTest {
         // assert each product element
         Assert.assertTrue(homePage.getAllProduct());
         System.out.println("Get All Product success");
+    }
+
+    @Test
+    public void productDetailsTest() throws InterruptedException {
+        HomePage homePage = new HomePage(driver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
+        // open product details
+        String productTitle = homePage.getProductTitle();
+        homePage.clickProduct();
+        Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getProductDetailsUrl());
+        Assert.assertEquals(productDetailsPage.getTitleProductDetails(), productTitle);
+        System.out.println("Actualnya === "+productDetailsPage.getTitleProductDetails());
+        System.out.println("Ekspektasi === "+productTitle);
     }
 
     @AfterClass

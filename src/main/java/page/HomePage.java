@@ -60,7 +60,11 @@ public class HomePage {
         return true;
     }
 
-    public String getProductName() {
+    public void clickProduct() {
+        driver.findElement(titleProduct1).click();
+    }
+
+    public String getProductTitle() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(titleProduct1)).getText();
     }
 

@@ -31,6 +31,6 @@ public class BaseUtil {
     }
 
     public String getProductDetailsUrl() {
-        return "https://www.saucedemo.com/inventory-item.html?id=(*))";
+        return "https://www.saucedemo.com/inventory-item.html?id=4";
     }
 }
