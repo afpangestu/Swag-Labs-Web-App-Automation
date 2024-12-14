@@ -5,10 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import page.CartPage;
-import page.HomePage;
-import page.LoginPage;
-import page.ProductDetailsPage;
+import page.*;
 
 public class HomePageTest {
     WebDriver driver;

@@ -19,28 +19,15 @@ public class CartPage {
     }
 
     // locator
-    By continueShoppingBtn = By.xpath("//button[@id='continue-shopping']");
-    By firstNameTxt = By.xpath("//input[@id='first-name']");
-    By lastNameTxt = By.xpath("//input[@id='last-name']");
-    By zipCodeTxt = By.xpath("//input[@id='postal-code']");
+    By continueShoppingBtn = By.xpath("//*[@id='continue-shopping']");
+    By checkoutBtn = By.xpath("//*[@id='checkout']");
 
     // actions
     public void clickContinueShoppingBtn() {
         wait.until(ExpectedConditions.elementToBeClickable(continueShoppingBtn)).click();
     }
 
-    public void setFirstName(String firstName) {
-        driver.findElement(firstNameTxt).clear();
-        driver.findElement(firstNameTxt).sendKeys(firstName);
-    }
-
-    public void setLastName(String lastName) {
-        driver.findElement(lastNameTxt).clear();
-        driver.findElement(lastNameTxt).sendKeys(lastName);
-    }
-
-    public void setZipCode(String zipCode) {
-        driver.findElement(zipCodeTxt).clear();
-        driver.findElement(zipCodeTxt).sendKeys(zipCode);
+    public void clickContinueToStepOne() {
+        wait.until(ExpectedConditions.elementToBeClickable(checkoutBtn)).click();
     }
 }
