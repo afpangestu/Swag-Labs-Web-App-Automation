@@ -80,6 +80,7 @@ public class NavBarTest {
         NavBarMenu navBarMenu = new NavBarMenu(driver);
         // click logout button
         navBarMenu.clickLogoutBtn();
+        Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getBaseUrl());
     }
 
     @AfterClass

@@ -41,9 +41,12 @@ public class HomePageTest {
     public void cartBtnTest() {
         HomePage homePage = new HomePage(driver);
         CartPage cartPage = new CartPage(driver);
+        // click cart button
         homePage.clickCartBtn();
         Assert.assertEquals(driver.getCurrentUrl(),baseUtil.getCartUrl());
+        // back to home page
         cartPage.clickContinueShoppingBtn();
+        Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         System.out.println("Cart and ContinueShopping button is working fine");
     }
 

@@ -104,18 +104,21 @@ public class FooterTest {
     @Test(priority = 4)
     public void checkFooterTextTest() {
         FooterMenu footerMenu = new FooterMenu(driver);
+        // assert footer text
         Assert.assertEquals(footerMenu.getFooterText(),"© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy");
     }
 
     @Test(priority = 5)
     public void checkTosLinkTest() {
         FooterMenu footerMenu = new FooterMenu(driver);
+        // check terms of service link
         footerMenu.checkTosLinkText();
     }
 
     @Test(priority = 6)
     public void checkPrivacyLinkTest() {
         FooterMenu footerMenu = new FooterMenu(driver);
+        // check privacy link
         footerMenu.checkPrivacyLinkText();
     }
 
