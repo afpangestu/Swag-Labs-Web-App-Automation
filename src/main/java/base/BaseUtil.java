@@ -37,4 +37,16 @@ public class BaseUtil {
     public String getProductDetailsUrl2() {
         return "https://www.saucedemo.com/inventory-item.html?id=5";
     }
+
+    public String getCheckoutStepOneUrl() {
+        return "https://www.saucedemo.com/checkout-step-one.html";
+    }
+
+    public String getCheckoutStepTwoUrl() {
+        return "https://www.saucedemo.com/checkout-step-two.html";
+    }
+
+    public String checkoutCompleteUrl() {
+        return "https://www.saucedemo.com/checkout-complete.html";
+    }
 }
