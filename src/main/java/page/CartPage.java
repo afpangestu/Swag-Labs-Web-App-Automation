@@ -20,12 +20,27 @@ public class CartPage {
 
     // locator
     By continueShoppingBtn = By.xpath("//button[@id='continue-shopping']");
+    By firstNameTxt = By.xpath("//input[@id='first-name']");
+    By lastNameTxt = By.xpath("//input[@id='last-name']");
+    By zipCodeTxt = By.xpath("//input[@id='postal-code']");
 
     // actions
     public void clickContinueShoppingBtn() {
-        wait.until(
-                ExpectedConditions.elementToBeClickable(continueShoppingBtn)
-        );
-        driver.findElement(continueShoppingBtn).click();
+        wait.until(ExpectedConditions.elementToBeClickable(continueShoppingBtn)).click();
+    }
+
+    public void setFirstName(String firstName) {
+        driver.findElement(firstNameTxt).clear();
+        driver.findElement(firstNameTxt).sendKeys(firstName);
+    }
+
+    public void setLastName(String lastName) {
+        driver.findElement(lastNameTxt).clear();
+        driver.findElement(lastNameTxt).sendKeys(lastName);
+    }
+
+    public void setZipCode(String zipCode) {
+        driver.findElement(zipCodeTxt).clear();
+        driver.findElement(zipCodeTxt).sendKeys(zipCode);
     }
 }
