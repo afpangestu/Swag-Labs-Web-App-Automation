@@ -1,11 +1,16 @@
 package page;
 
+import com.aventstack.extentreports.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class HomePage {
     WebDriver driver;
@@ -118,6 +123,19 @@ public class HomePage {
         String lastPriceString = wait.until(ExpectedConditions.visibilityOfElementLocated(lastPriceText)).getText().replace("$", "");
         return Double.parseDouble(lastPriceString);
     }
+
+//    public void isSortingAZCorrect() {
+//        List<String> obtainedList = new ArrayList<>();
+//        List<WebElement> elementList = driver.findElements(allTitleProduct);
+//        for (WebElement x : elementList) {
+//            obtainedList.add(x.getText());
+//        }
+//        ArrayList<String> sortedList = new ArrayList<>();
+//        for (String s : obtainedList) {
+//            sortedList.add(s);
+//        }
+//        Collections.sort(sortedList);
+//    }
 
     public void clickAddToCart1() {
         driver.findElement(addToCartProduct1).click();

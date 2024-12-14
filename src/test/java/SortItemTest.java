@@ -1,5 +1,7 @@
 import base.BaseUtil;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -7,6 +9,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import page.HomePage;
 import page.LoginPage;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class SortItemTest {
     WebDriver driver;
@@ -27,21 +33,47 @@ public class SortItemTest {
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
     }
 
-    @Test
+    @Test(priority = 1)
     public void sortAZTest() {
         HomePage homePage = new HomePage(driver);
+        List<String> obtainedList = new ArrayList<>();
+        List<WebElement> elementList = driver.findElements(By.xpath("//div[@class='inventory_item_name ']"));
+        for (WebElement x : elementList) {
+            obtainedList.add(x.getText());
+        }
+
         homePage.clickSortBtn();
         homePage.clickSortAZ();
+
+        ArrayList<String> sortedList = new ArrayList<>();
+        for (String s : obtainedList) {
+            sortedList.add(s);
+        }
+        Collections.sort(sortedList);
+        Assert.assertEquals(sortedList, obtainedList);
     }
 
-    @Test
+    @Test(priority = 2)
     public void sortZATest() {
         HomePage homePage = new HomePage(driver);
+        List<String> obtainedList = new ArrayList<>();
+        List<WebElement> elementList = driver.findElements(By.xpath("//div[@class='inventory_item_name ']"));
+        for (WebElement x : elementList) {
+            obtainedList.add(x.getText());
+        }
+
         homePage.clickSortBtn();
         homePage.clickSortZA();
+
+        ArrayList<String> sortedList = new ArrayList<>();
+        for (String s : obtainedList) {
+            sortedList.add(s);
+        }
+        Collections.reverse(sortedList);
+        Assert.assertNotEquals(sortedList, obtainedList);
     }
 
-    @Test
+    @Test(priority = 3)
     public void sortLoHiTest() {
         HomePage homePage = new HomePage(driver);
         homePage.clickSortBtn();
@@ -50,7 +82,7 @@ public class SortItemTest {
         System.out.println(homePage.getFirstPrice()+" <= "+homePage.getLastPrice());
     }
 
-    @Test
+    @Test(priority = 4)
     public void sortHiLoTest() {
         HomePage homePage = new HomePage(driver);
         homePage.clickSortBtn();
