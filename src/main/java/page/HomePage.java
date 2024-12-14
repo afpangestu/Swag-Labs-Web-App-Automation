@@ -69,7 +69,7 @@ public class HomePage {
     }
 
     public String getProductImg() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(imgProduct1)).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(imgProduct1)).getDomProperty("src");
     }
 
     public String getProductDesc() {

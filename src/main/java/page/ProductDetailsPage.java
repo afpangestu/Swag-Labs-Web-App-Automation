@@ -20,7 +20,8 @@ public class ProductDetailsPage {
 
     // locator
     By titleProductDetails = By.xpath("//div[@class='inventory_details_name large_size']");
-    By imageProductDetails = By.className(".inventory_details_img");
+    By imageProductDetails = By.xpath("//img[@class='inventory_details_img']");
+//    By imageProductDetails = By.className(".inventory_details_img");
     By descProductDetails = By.xpath("//div[@class='inventory_details_desc large_size']");
     By priceProductDetails = By.xpath("//div[@class='inventory_details_price']");
     By addToCartBtnDetails = By.xpath("//button[@id='add-to-cart']");
@@ -31,8 +32,8 @@ public class ProductDetailsPage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(titleProductDetails)).getText();
     }
 
-    public void getImageProductDetails() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(imageProductDetails));
+    public String getImageProductDetails() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(imageProductDetails)).getDomProperty("src");
     }
 
     public String getDescProductDetails() {
