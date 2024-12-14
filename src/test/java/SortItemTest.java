@@ -50,7 +50,7 @@ public class SortItemTest {
             sortedList.add(s);
         }
         Collections.sort(sortedList);
-        Assert.assertEquals(sortedList, obtainedList);
+        Assert.assertEquals(obtainedList, sortedList);
     }
 
     @Test(priority = 2)
@@ -69,7 +69,7 @@ public class SortItemTest {
         for (String s : obtainedList) {
             sortedList.add(s);
         }
-        Collections.reverse(sortedList);
+        obtainedList.sort(Collections.reverseOrder());
         Assert.assertNotEquals(sortedList, obtainedList);
     }
 
