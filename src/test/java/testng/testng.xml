@@ -9,6 +9,7 @@
             <class name="FooterTest"/>
             <class name="HomePageTest"/>
             <class name="SortItemTest"/>
+            <class name="CheckoutProductTest"/>
         </classes>
     </test>
 </suite>
