@@ -50,7 +50,7 @@ public class NavBarMenu {
         driver.findElement(resetBtn).click();
     }
 
-    public double getShoppingCartBadge() {
-        return Double.parseDouble(driver.findElement(cartBadge).getText());
+    public int getShoppingCartBadge() {
+        return Integer.parseInt(driver.findElement(cartBadge).getText());
     }
 }
