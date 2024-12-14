@@ -1,7 +1,5 @@
 import base.BaseUtil;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -11,8 +9,7 @@ import org.testng.annotations.Test;
 import page.*;
 import util.Util;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class CheckoutProductTest {
     WebDriver driver;
@@ -118,8 +115,19 @@ public class CheckoutProductTest {
         }
     }
 
+    @Test(priority = 4)
     public void checkoutWithoutAddToCart() {
-
+        HomePage homePage = new HomePage(driver);
+        CartPage cartPage = new CartPage(driver);
+        // click cart button
+        homePage.clickCartBtn();
+        Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getCartUrl());
+        // click checkout
+        cartPage.clickContinueToStepOne();
+        Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getCheckoutStepOneUrl());
+        if (Objects.equals(driver.getCurrentUrl(), baseUtil.getCheckoutStepOneUrl())) {
+            System.out.println("test 'checkoutWithoutAddToCart' Harusnya gagal");
+        }
     }
 
     @AfterClass
