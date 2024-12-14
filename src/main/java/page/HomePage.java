@@ -44,6 +44,8 @@ public class HomePage {
     By sortZA = By.xpath("//*[@value='za']");
     By sortLoHi = By.xpath("//*[@value='lohi']");
     By sortHiLo = By.xpath("//*[@value='hilo']");
+    By firstPriceText = By.xpath("(//div[@class='inventory_item_price'])[1]");
+    By lastPriceText = By.xpath("(//div[@class='inventory_item_price'])[6]");
 
     // actions
     public boolean checkLogoSwag() {
@@ -87,6 +89,10 @@ public class HomePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(priceProduct1)).getText();
     }
 
+    public void clickSortBtn() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(sortBtn)).click();
+    }
+
     public void clickSortAZ() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(sortAZ)).click();
     }
@@ -101,6 +107,16 @@ public class HomePage {
 
     public void clickSortHiLo() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(sortHiLo)).click();
+    }
+
+    public double getFirstPrice() {
+        String firstPriceString = wait.until(ExpectedConditions.visibilityOfElementLocated(firstPriceText)).getText().replace("$", "");
+        return Double.parseDouble(firstPriceString);
+    }
+
+    public double getLastPrice() {
+        String lastPriceString = wait.until(ExpectedConditions.visibilityOfElementLocated(lastPriceText)).getText().replace("$", "");
+        return Double.parseDouble(lastPriceString);
     }
 
     public void clickAddToCart1() {

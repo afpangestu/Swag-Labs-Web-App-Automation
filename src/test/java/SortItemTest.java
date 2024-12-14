@@ -30,25 +30,33 @@ public class SortItemTest {
     @Test
     public void sortAZTest() {
         HomePage homePage = new HomePage(driver);
+        homePage.clickSortBtn();
         homePage.clickSortAZ();
     }
 
     @Test
     public void sortZATest() {
         HomePage homePage = new HomePage(driver);
+        homePage.clickSortBtn();
         homePage.clickSortZA();
     }
 
     @Test
     public void sortLoHiTest() {
         HomePage homePage = new HomePage(driver);
+        homePage.clickSortBtn();
         homePage.clickSortLoHi();
+        Assert.assertTrue(homePage.getFirstPrice() <= homePage.getLastPrice());
+        System.out.println(homePage.getFirstPrice()+" <= "+homePage.getLastPrice());
     }
 
     @Test
     public void sortHiLoTest() {
         HomePage homePage = new HomePage(driver);
+        homePage.clickSortBtn();
         homePage.clickSortHiLo();
+        Assert.assertTrue(homePage.getFirstPrice() >= homePage.getLastPrice());
+        System.out.println(homePage.getFirstPrice()+" >= "+homePage.getLastPrice());
     }
 
     @AfterClass
