@@ -24,30 +24,27 @@ public class NavBarMenu {
     By aboutBtn = By.xpath("//a[@id='about_sidebar_link']");
     By logoutBtn = By.xpath("//a[@id='logout_sidebar_link']");
     By resetBtn = By.xpath("//a[@id='reset_sidebar_link']");
-    By logoSwagLabs = By.xpath("//div[@class='login_logo']");
     By cartBadge = By.xpath("//span[@class='shopping_cart_badge']");
 
     // actions
     public void clickNavMenuBtn() {
-        driver.findElement(navMenubtn).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(allItemsBtn));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(navMenubtn)).click();
     }
 
     public void clickAllItemsBtn() {
-        driver.findElement(allItemsBtn).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allItemsBtn)).click();
     }
 
     public void clickAboutBtn() {
-        driver.findElement(aboutBtn).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(aboutBtn)).click();
     }
 
     public void clickLogoutBtn() {
-        driver.findElement(logoutBtn).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(logoSwagLabs));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(logoutBtn)).click();
     }
 
     public void clickResetStateBtn() {
-        driver.findElement(resetBtn).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(resetBtn)).click();
     }
 
     public int getShoppingCartBadge() {
