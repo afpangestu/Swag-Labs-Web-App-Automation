@@ -20,9 +20,14 @@ public class CheckoutCompletePage {
 
     // locator
     By completeTxt = By.xpath("//*[contains(text(),'Complete')]");
+    By backToHomeBtn = By.xpath("//*[@id='back-to-products']");
 
     // actions
-    public void getCompleteText() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(completeTxt)).isDisplayed();
+    public boolean getCompleteText() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(completeTxt)).isDisplayed();
+    }
+
+    public void clickBackToHomeBtn() {
+        wait.until(ExpectedConditions.elementToBeClickable(backToHomeBtn)).click();
     }
 }

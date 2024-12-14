@@ -46,7 +46,7 @@ public class BaseUtil {
         return "https://www.saucedemo.com/checkout-step-two.html";
     }
 
-    public String checkoutCompleteUrl() {
+    public String getCheckoutCompleteUrl() {
         return "https://www.saucedemo.com/checkout-complete.html";
     }
 }
