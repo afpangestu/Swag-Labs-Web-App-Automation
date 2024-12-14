@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import page.*;
+import util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +78,7 @@ public class CheckoutProductTest {
     @Test(priority = 3, dataProvider = "checkout_information")
     public void checkoutProduct(String firstName, String lastName, String zipCode, String scenario) {
         HomePage homePage = new HomePage(driver);
+        Util util = new Util(driver);
         NavBarMenu navBarMenu = new NavBarMenu(driver);
         CartPage cartPage = new CartPage(driver);
         CheckoutStepOnePage checkoutStepOnePage = new CheckoutStepOnePage(driver);
@@ -87,13 +89,8 @@ public class CheckoutProductTest {
         homePage.clickCartBtn();
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getCartUrl());
         // store all item in the cart to List
-        List<String> obtainedList = new ArrayList<>();
-        List<WebElement> elementList = driver.findElements(By.xpath("//div[@class='cart_item']"));
-        for (WebElement x : elementList) {
-            obtainedList.add(x.getText());
-        }
         // amount product in the cart page
-        int amountItem = obtainedList.size();
+        int amountItem = util.getTotalItem("//div[@class='cart_item']");
         Assert.assertEquals(amountItem, navBarMenu.getShoppingCartBadge());
         // click checkout
         cartPage.clickContinueToStepOne();
@@ -119,6 +116,10 @@ public class CheckoutProductTest {
                 System.out.println("Checkout Product Success");
             }
         }
+    }
+
+    public void checkoutWithoutAddToCart() {
+
     }
 
     @AfterClass
