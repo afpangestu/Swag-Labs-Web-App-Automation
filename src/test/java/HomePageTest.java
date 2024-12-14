@@ -66,9 +66,9 @@ public class HomePageTest {
         String productDesc = homePage.getProductDesc();
         String productPrice = homePage.getProductPrice();
         // click product to open product details
-        homePage.clickProduct();
+        homePage.clickProductTitle();
         // assert url
-        Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getProductDetailsUrl());
+        Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getProductDetailsUrl1());
         // assert each product details
         Assert.assertEquals(productDetailsPage.getTitleProductDetails(), productTitle);
         System.out.println("Title Actual: "+productDetailsPage.getTitleProductDetails()+" Title Expected: "+productTitle);

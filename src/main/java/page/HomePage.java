@@ -1,16 +1,10 @@
 package page;
 
-import com.aventstack.extentreports.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class HomePage {
     WebDriver driver;
@@ -40,6 +34,7 @@ public class HomePage {
     // single product locator
     By titleProduct1 = By.cssSelector("a[id='item_4_title_link'] div[class='inventory_item_name ']");
     By imgProduct1 = By.xpath("//*[@id='item_4_img_link']/img");
+    By imgProduct2 = By.xpath("//*[@id='item_5_img_link']/img");
     By descProduct1 = By.xpath("//div[normalize-space()='carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.']");
     By priceProduct1 = By.xpath("//div[normalize-space()='$29.99']");
     By addToCartProduct1 = By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']");
@@ -74,12 +69,16 @@ public class HomePage {
         return true;
     }
 
-    public void clickProduct() {
+    public void clickProductTitle() {
         driver.findElement(titleProduct1).click();
     }
 
     public String getProductTitle() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(titleProduct1)).getText();
+    }
+
+    public void clickProductImg() {
+        driver.findElement(imgProduct2).click();
     }
 
     public String getProductImg() {
@@ -123,19 +122,6 @@ public class HomePage {
         String lastPriceString = wait.until(ExpectedConditions.visibilityOfElementLocated(lastPriceText)).getText().replace("$", "");
         return Double.parseDouble(lastPriceString);
     }
-
-//    public void isSortingAZCorrect() {
-//        List<String> obtainedList = new ArrayList<>();
-//        List<WebElement> elementList = driver.findElements(allTitleProduct);
-//        for (WebElement x : elementList) {
-//            obtainedList.add(x.getText());
-//        }
-//        ArrayList<String> sortedList = new ArrayList<>();
-//        for (String s : obtainedList) {
-//            sortedList.add(s);
-//        }
-//        Collections.sort(sortedList);
-//    }
 
     public void clickAddToCart1() {
         driver.findElement(addToCartProduct1).click();
