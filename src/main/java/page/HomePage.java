@@ -24,12 +24,13 @@ public class HomePage {
     By sortBtn = By.xpath("//select[@class='product_sort_container']");
 
     // all product locator
-//    By allImgProductAlternative = By.xpath("//a[not(@href)]/img/@src | //a[img]/@href");
     By allImgProduct = By.xpath("//img[@class='inventory_item_img']");
     By allTitleProduct = By.xpath("//div[@class='inventory_item_name ']");
     By allDescProduct = By.xpath("//div[@class='inventory_item_desc']");
     By allPriceProduct = By.xpath("//div[@class='inventory_item_price']");
     By allAddToCartBtnProduct = By.xpath("//button[@class='btn btn_primary btn_small btn_inventory ']");
+    // alternative
+//    By allImgProductAlternative = By.xpath("//a[not(@href)]/img/@src | //a[img]/@href");
 
     // single product locator
     By titleProduct1 = By.cssSelector("a[id='item_4_title_link'] div[class='inventory_item_name ']");
@@ -37,6 +38,12 @@ public class HomePage {
     By descProduct1 = By.xpath("//div[normalize-space()='carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.']");
     By priceProduct1 = By.xpath("//div[normalize-space()='$29.99']");
     By addToCartProduct1 = By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']");
+
+    // sort item locator
+    By sortAZ = By.xpath("//*[@value='az']");
+    By sortZA = By.xpath("//*[@value='za']");
+    By sortLoHi = By.xpath("//*[@value='lohi']");
+    By sortHiLo = By.xpath("//*[@value='hilo']");
 
     // actions
     public boolean checkLogoSwag() {
@@ -78,6 +85,22 @@ public class HomePage {
 
     public String getProductPrice() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(priceProduct1)).getText();
+    }
+
+    public void clickSortAZ() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(sortAZ)).click();
+    }
+
+    public void clickSortZA() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(sortZA)).click();
+    }
+
+    public void clickSortLoHi() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(sortLoHi)).click();
+    }
+
+    public void clickSortHiLo() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(sortHiLo)).click();
     }
 
     public void clickAddToCart1() {
