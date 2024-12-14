@@ -30,7 +30,7 @@ public class CheckoutProductTest {
     }
 
     @Test(priority = 1)
-    public void CheckoutViaProductTitle() throws InterruptedException {
+    public void addToCartViaProductTitle() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
         NavBarMenu navBarMenu = new NavBarMenu(driver);
@@ -46,7 +46,7 @@ public class CheckoutProductTest {
     }
 
     @Test(priority = 2)
-    public void CheckoutViaProductImage() throws InterruptedException {
+    public void addToCartViaProductImage() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
         NavBarMenu navBarMenu = new NavBarMenu(driver);
@@ -59,6 +59,12 @@ public class CheckoutProductTest {
         productDetailsPage.clickBackToProductBtn();
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         Thread.sleep(2000);
+    }
+
+    public void checkoutWithValidData() {
+        HomePage homePage = new HomePage(driver);
+        homePage.clickCartBtn();
+        Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getCartUrl());
     }
 
     @AfterClass
