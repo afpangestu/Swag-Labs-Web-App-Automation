@@ -30,7 +30,11 @@ public class BaseUtil {
         return "https://www.saucedemo.com/cart.html";
     }
 
-    public String getProductDetailsUrl() {
+    public String getProductDetailsUrl1() {
         return "https://www.saucedemo.com/inventory-item.html?id=4";
+    }
+
+    public String getProductDetailsUrl2() {
+        return "https://www.saucedemo.com/inventory-item.html?id=5";
     }
 }
