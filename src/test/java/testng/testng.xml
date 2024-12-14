@@ -8,6 +8,7 @@
             <class name="NavBarTest"/>
             <class name="FooterTest"/>
             <class name="HomePageTest"/>
+            <class name="SortItemTest"/>
         </classes>
     </test>
 </suite>
