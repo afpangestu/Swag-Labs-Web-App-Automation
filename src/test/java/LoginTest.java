@@ -47,7 +47,7 @@ public class LoginTest {
             case "wrong" -> loginPage.setErrorMsgIncorrect();
             case "success" -> {
                 Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
-                System.out.println("Login successful");
+                System.out.println("Login Test Success");
                 Thread.sleep(2000);
             }
         }

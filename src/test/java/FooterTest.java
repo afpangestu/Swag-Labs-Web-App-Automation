@@ -44,6 +44,7 @@ public class FooterTest {
         // move to tab 2
         driver.switchTo().window(tabs.get(1));
         // assert the url
+        Thread.sleep(3000);
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getTwitterUrl());
         // print output to terminal
         System.out.println("Link Actual: " + driver.getCurrentUrl() +" Link Expected: " +baseUtil.getTwitterUrl());
@@ -51,7 +52,6 @@ public class FooterTest {
         driver.close();
         // move to first tab (Swag labs)
         driver.switchTo().window(tabs.get(0));
-        Thread.sleep(3000);
         // assert the url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
@@ -71,6 +71,7 @@ public class FooterTest {
         // move to tab 2
         driver.switchTo().window(tabs.get(1));
         // assert the url
+        Thread.sleep(3000);
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getFacebookUrl());
         // print output to terminal
         System.out.println("Link Actual: " + driver.getCurrentUrl() +" Link Expected: " +baseUtil.getFacebookUrl());
@@ -78,7 +79,6 @@ public class FooterTest {
         driver.close();
         // move to first tab (Swag labs)
         driver.switchTo().window(tabs.get(0));
-        Thread.sleep(3000);
         // assert the url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
@@ -95,6 +95,7 @@ public class FooterTest {
         // move to tab 2
         driver.switchTo().window(tabs.get(1));
         // assert the url
+        Thread.sleep(3000);
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getLinkedInUrl());
         // print output to terminal
         System.out.println("Link Actual: " + driver.getCurrentUrl() +" Link Expected: " +baseUtil.getLinkedInUrl());
@@ -102,7 +103,6 @@ public class FooterTest {
         driver.close();
         // move to first tab (Swag labs)
         driver.switchTo().window(tabs.get(0));
-        Thread.sleep(3000);
         // assert the url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
