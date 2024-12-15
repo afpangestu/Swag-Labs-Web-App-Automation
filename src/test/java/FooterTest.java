@@ -35,7 +35,7 @@ public class FooterTest {
     }
 
     @Test(priority = 1)
-    public void twitterTest()  {
+    public void twitterTest() throws InterruptedException {
         FooterMenu footerMenu = new FooterMenu(driver);
         // click twitter button
         footerMenu.clickTwitterBtn();
@@ -51,6 +51,7 @@ public class FooterTest {
         driver.close();
         // move to first tab (Swag labs)
         driver.switchTo().window(tabs.get(0));
+        Thread.sleep(3000);
         // assert the url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
@@ -58,7 +59,7 @@ public class FooterTest {
     }
 
     @Test(priority = 2)
-    public void facebookTest()  {
+    public void facebookTest() throws InterruptedException {
         for (int i=0; i<3; i++) {
             System.out.println("ini data ke-"+i);
         }
@@ -77,6 +78,7 @@ public class FooterTest {
         driver.close();
         // move to first tab (Swag labs)
         driver.switchTo().window(tabs.get(0));
+        Thread.sleep(3000);
         // assert the url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
@@ -84,7 +86,7 @@ public class FooterTest {
     }
 
     @Test(priority = 3)
-    public void linkedInTest()  {
+    public void linkedInTest() throws InterruptedException {
         FooterMenu footerMenu = new FooterMenu(driver);
         // click twitter button
         footerMenu.clickLinkedInBtn();
@@ -100,6 +102,7 @@ public class FooterTest {
         driver.close();
         // move to first tab (Swag labs)
         driver.switchTo().window(tabs.get(0));
+        Thread.sleep(3000);
         // assert the url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
