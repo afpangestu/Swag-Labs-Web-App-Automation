@@ -1,6 +1,7 @@
 import base.BaseUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import page.LoginPage;
@@ -22,7 +23,9 @@ public class LoginTest {
     @BeforeClass
     public void setup() {
         // open browser and url
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.get(baseUtil.getBaseUrl());
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getBaseUrl());
