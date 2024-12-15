@@ -60,9 +60,6 @@ public class FooterTest {
 
     @Test(priority = 2)
     public void facebookTest() throws InterruptedException {
-        for (int i=0; i<3; i++) {
-            System.out.println("ini data ke-"+i);
-        }
         FooterMenu footerMenu = new FooterMenu(driver);
         // click twitter button
         footerMenu.clickFacebookBtn();
