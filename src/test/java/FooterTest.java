@@ -50,7 +50,7 @@ public class FooterTest {
         // close current tab (twitter)
         driver.close();
         // move to first tab (Swag labs)
-        driver.switchTo().window(tabs.getFirst());
+        driver.switchTo().window(tabs.get(0));
         // assert the url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
@@ -76,7 +76,7 @@ public class FooterTest {
         // close current tab (facebook)
         driver.close();
         // move to first tab (Swag labs)
-        driver.switchTo().window(tabs.getFirst());
+        driver.switchTo().window(tabs.get(0));
         // assert the url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
@@ -99,7 +99,7 @@ public class FooterTest {
         // close current tab (LinkedIn)
         driver.close();
         // move to first tab (Swag labs)
-        driver.switchTo().window(tabs.getFirst());
+        driver.switchTo().window(tabs.get(0));
         // assert the url
         Assert.assertEquals(driver.getCurrentUrl(), baseUtil.getHomePageUrl());
         // print output to terminal
